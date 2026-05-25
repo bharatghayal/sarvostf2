@@ -1,0 +1,112 @@
+/* Custom cursor — hide default on non-touch devices */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Hover effects ── */
+
+/* Cards lift & glow */
+.hover-card {
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease;
+}
+.hover-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 20px 50px rgba(10, 77, 162, 0.18) !important;
+}
+
+/* Buttons pulse glow on hover */
+a[href], button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+a[href]:hover, button:hover {
+  transform: translateY(-2px);
+}
+a[href]:active, button:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Nav link underline slide */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #F5A000;
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Image zoom on hover */
+.hover-img-zoom {
+  overflow: hidden;
+  border-radius: inherit;
+}
+.hover-img-zoom img {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hover-img-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* Shimmer effect on cards */
+.shimmer-hover {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.shimmer-hover:hover::before {
+  left: 130%;
+}
+
+/* Orange accent glow on CTA buttons */
+.btn-glow:hover {
+  box-shadow: 0 8px 30px rgba(245, 160, 0, 0.55) !important;
+}
+
+/* Blue glow on secondary buttons */
+.btn-blue-glow:hover {
+  box-shadow: 0 8px 30px rgba(10, 77, 162, 0.45) !important;
+}
+
+/* Section fade-in via scroll (base state) */
+.section-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.section-fade.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
