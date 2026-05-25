@@ -1,7 +1,7 @@
 
-  # SARVOST Website UI Design
+  # SARVOST 
 
-  This is a code bundle for SARVOST Website UI Design. The original project is available at https://www.figma.com/design/YpSxBPnZnEawvn2DsJ8pvf/SARVOST-Website-UI-Design.
+  This is a code bundle for SARVOST . The original project is available at https://www.figma.com/design/YpSxBPnZnEawvn2DsJ8pvf/SARVOST-Website-UI-Design.
 
   ## Running the code
 
